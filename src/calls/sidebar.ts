@@ -10,7 +10,6 @@ export async function fetchData() {
     
     const raw = await res.json();
     const transformed = transformSidebar(raw.data.sidebar);
-    
     if (!transformed) throw new Error("Invalid data");
     const payload = {
       sidebar: { 
@@ -22,7 +21,7 @@ export async function fetchData() {
         ui: raw.data.header.ui || {}, 
       }, 
     };
-    UICCache.set(payload);
+    // UICCache.set(payload);
     return payload;
   } catch (err) {
     console.error("Sidebar Fetch Error:", err);

@@ -66,7 +66,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
           <HeaderLayout />
           <div className="flex">
             <SidebarComponent />
-            <div className="mt-12 w-full xl:pl-72 lg:pl-64 sm:pl-16 pl-0 animate-in fade-in duration-500">
+            <div className="mt-12 w-full lg:pl-72 sm:pl-16 pl-0 animate-in fade-in duration-500">
               {children}
               <FooterLayout />
             </div>

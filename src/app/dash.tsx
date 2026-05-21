@@ -62,9 +62,7 @@ export default function Dash() {
   const [activeTab, setActiveTab] = useState<'all' | 'sending' | 'receiving'>('all');
 
   return (
-    <section className="scroll-mt-16 lg:pl-4 space-y-6 max-w-[1600px] mx-auto p-4 text-slate-900 dark:text-slate-100 font-sans antialiased">
-      
-      {/* 1. TOP HEADER & METRIC STRIP */}
+    <section className="scroll-mt-16 space-y-6 max-w-[1600px] mx-auto text-slate-900 dark:text-slate-100 font-sans antialiased">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-5 border-b border-slate-200 dark:border-slate-800">
         <div>
           <div className="flex items-center gap-3">
@@ -79,7 +77,7 @@ export default function Dash() {
         </div>
         
         {/* Real-time system vitals strip */}
-        <div className="grid grid-cols-2 sm:flex sm:items-center gap-3 sm:gap-6 bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+        {/* <div className="grid grid-cols-2 sm:flex sm:items-center gap-3 sm:gap-6 bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
           <div className="px-2">
             <span className="block text-[10px] uppercase font-bold tracking-wider text-slate-400">Total In-Flight</span>
             <span className="text-base font-bold font-mono text-indigo-600 dark:text-indigo-400">{brokerMetrics.totalInFlight}</span>
@@ -96,7 +94,7 @@ export default function Dash() {
             <span className="block text-[10px] uppercase font-bold tracking-wider text-slate-400">Backpressure</span>
             <span className="text-base font-bold text-emerald-500">{brokerMetrics.backpressureStatus}</span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* 2. CHANNELS DETAILED ANALYTICS GRID */}

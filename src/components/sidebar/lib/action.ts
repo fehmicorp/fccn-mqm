@@ -13,14 +13,14 @@ export const useSidebarActions = () => {
       if (isTablet || !item.subitems) {
         setActiveSub("");
         setSection(item.href);
-        updateHash(item.href);
+        updateHash(item.label, item.href);
       } else {
         setOpenMenu(openMenu === item.label ? "" : item.label);
       }
     } else {
       setActiveSub("");
       setSection(item.href);
-      updateHash(item.href);
+      updateHash(item.label, item.href);
     }
   };
 
@@ -28,7 +28,7 @@ export const useSidebarActions = () => {
     setActiveMain(item.href);
     setActiveSub(sub.href);
     setSection(item.href, sub.href);
-    updateHash(item.href, sub.href);    
+    updateHash(item.label, item.href, sub.href);    
   };
 
   return { handleMainClick, handleSubClick };

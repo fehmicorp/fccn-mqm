@@ -9,11 +9,6 @@ export const ui = {
     nav: "flex-1 overflow-y-auto px-3 py-4 pb-25 space-y-2 scrollbar-hide"
   },
   state:{
-    def: {
-      text: "text-sm font-medium tracking-wide",
-      dot: "bg-slate-300 dark:bg-stone-600",
-      items: "bg-transparent text-slate-900 hover:bg-slate-200/50 dark:text-stone-400 dark:hover:bg-stone-800/50 dark:hover:text-stone-100"
-    },
     active: {
       text: "text-slate-900 dark:text-white font-semibold bg-stone-200 dark:bg-stone-900",
       dot: "bg-lime-500 scale-125",

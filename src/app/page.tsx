@@ -1,7 +1,13 @@
+
+import SectionRegistry from "@/section/registry";
+import Dash from "./dash";
+
 export default function Root() {
+  
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">Context</h1>
+    <div className="flex flex-col w-full space-y-6 bg-stone-100 dark:bg-stone-900/50 pb-20 px-4 min-h-full lg:px-10 xl:px-12 py-4 animate-in fade-in duration-500">
+      {/* <SectionRegistry /> */}
+      <Dash/>
     </div>
   )
 }

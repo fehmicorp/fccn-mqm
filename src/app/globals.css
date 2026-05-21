@@ -1,49 +1,101 @@
 @import "tailwindcss";
 
-:root {
-  --background: #f2f2f2;
-  --foreground: #171717;
-}
 @custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* -------------------------------- */
+/* DEFAULT (SAFE FALLBACK - NO FLASH) */
+/* -------------------------------- */
+
+html {
+  background: #0a0a0a; /* prevents white flash */
+  color-scheme: dark;
 }
 
-html, body {
-  scroll-behavior: smooth !important;
+/* -------------------------------- */
+/* LIGHT THEME */
+/* -------------------------------- */
+
+html:not(.dark) {
+  --background: #f2f2f2;
+  --foreground: #171717;
+  color-scheme: light;
 }
 
+/* -------------------------------- */
+/* DARK THEME */
+/* -------------------------------- */
+
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  color-scheme: dark;
+}
+
+/* -------------------------------- */
+/* APPLY VARIABLES */
+/* -------------------------------- */
+
+html,
 body {
   background: var(--background);
   color: var(--foreground);
+  scroll-behavior: smooth !important;
+}
+
+/* -------------------------------- */
+/* TYPOGRAPHY */
+/* -------------------------------- */
+
+body {
   font-family: var(--font-inter), sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-inter), sans-serif;
   font-weight: 600;
 }
-body, h1, h2, h3, h4, h5, h6, span, div, p, a, input, button, textarea {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+
+/* -------------------------------- */
+/* DISABLE TEXT SELECTION */
+/* -------------------------------- */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div,
+p,
+a,
+input,
+button,
+textarea {
   user-select: none;
 }
+
+/* -------------------------------- */
+/* SCROLLBAR */
+/* -------------------------------- */
+
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE + Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari */
+  display: none;
 }

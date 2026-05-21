@@ -119,7 +119,7 @@ export default function DesktopSidebarClient() {
                 )}
               >
 
-                <div className="space-y-1 pb-2 bg-slate-50/50 dark:bg-stone-900/20 rounded-b-md">
+                <div className="space-y-1">
 
                   {item.subitems.map(
                     (sub: any, idx: number) => {

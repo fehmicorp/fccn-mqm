@@ -11,7 +11,7 @@ export default function TabletSidebar() {
 
   return (
     <aside className={sidebarUI.container.tablet}>
-      <nav className={`${sidebarUI.container.nav} flex-col items-center`}>
+      <nav className={`${sidebarUI.container.nav}`}>
         <TabletSidebarClient />
       </nav>
     </aside>

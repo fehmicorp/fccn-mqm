@@ -11,27 +11,22 @@ export const sidebarData = [
 
 export const sidebarUI = {
   container: {
-    subItem: "overflow-hidden transition-all duration-300 ease-in-out bg-stone-100/50 dark:bg-stone-700/40 rounded-md border border-slate-300/50 dark:border-stone-600/50 cursor-pointer",
-    desktop: "w-72 h-screen fixed top-0 pt-12 left-0 z-20 bg-slate-200 dark:bg-stone-900 border-r border-slate-400/50 flex flex-col",
-    tablet: "w-16 h-screen fixed top-12 left-0 z-20 bg-slate-200 dark:bg-stone-900 border-r border-slate-400/50 flex flex-col",
-    mobile: "absolute left-0 top-0 w-72 h-screen bg-slate-200 dark:bg-stone-950 transform transition-transform duration-300shadow-2xl flex flex-col",
-    nav: "flex-1 overflow-y-auto px-3 py-4 pb-25 space-y-2 scrollbar-hide"
+    subItem: "overflow-hidden transition-all duration-300 ease-in-out bg-slate-100/70 dark:bg-stone-700/40 rounded-md border border-slate-300/50 dark:border-stone-600/50 cursor-pointer p-1",
+    desktop: "xl:w-72 lg:w-64 h-screen fixed top-0 pt-12 left-0 z-20 bg-slate-200/70 dark:bg-stone-950/70 border-r border-slate-400/50 dark:border-stone-600/50 flex flex-col",
+    tablet: "w-16 h-screen fixed top-12 left-0 z-20 bg-slate-200/70 dark:bg-stone-950/70 border-r border-slate-400/50 dark:border-stone-600/50",
+    mobile: "absolute left-0 top-0 w-72 h-screen bg-slate-200/70 dark:bg-stone-950/70 transform transition-transform duration-300shadow-2xl flex flex-col",
+    nav: "overflow-y-auto px-2 py-4 pb-25 space-y-2 scrollbar-hide"
   },
   state:{
-    def: {
-      text: "text-xs font-light tracking-wide hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800/40",
-      dot: "bg-stone-300 dark:bg-stone-600",
-      items: "bg-transparent text-stone-900 hover:bg-stone-200/50 dark:text-stone-400 dark:hover:bg-stone-600/30 dark:hover:text-stone-100"
-    },
     active: {
-      text: "text-stone-900 dark:text-white font-medium bg-slate-500/20 dark:bg-stone-900/50 hover:bg-slate-500/30 dark:hover:bg-stone-900/70",
+      text: "text-stone-900 dark:text-white font-medium bg-slate-400/50 dark:bg-stone-950/50",
       dot: "bg-lime-500 scale-125",
       items: "bg-stone-800 text-stone-200 dark:bg-stone-700 dark:text-stone-50 shadow-sm"
     },
     inactive: {
-      text: "text-stone-500 dark:text-stone-400 bg-transparent font-light hover:text-stone-900 dark:hover:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800/40 hover:shadow-sm",
+      text: "text-stone-500 dark:text-stone-400 bg-transparent font-light hover:bg-slate-400/50 dark:hover:bg-stone-600/30 dark:hover:text-stone-100 hover:shadow-xs",
       dot: "bg-stone-300 dark:bg-stone-600",
-      items: "bg-transparent text-stone-900 hover:bg-stone-200/50 dark:text-stone-400 dark:hover:bg-stone-600/30 dark:hover:text-stone-100"
+      items: "bg-transparent text-stone-900 hover:bg-slate-400/50 dark:text-stone-400 dark:hover:bg-stone-600/30 dark:hover:text-stone-100"
     }
   },
   mobile: {

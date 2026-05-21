@@ -109,7 +109,7 @@ export const useSidebarMapper = () => {
     /**
      * Sidebar Text
      */
-    sidebar: sidebarUI.state.def.text,
+    sidebar: sidebarUI.state.inactive.text,
 
     /**
      * Submenu Container

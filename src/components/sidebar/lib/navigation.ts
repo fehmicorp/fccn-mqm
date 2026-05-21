@@ -1,3 +1,6 @@
+import { title } from "@/app/config";
+import { label } from "framer-motion/m";
+
 /**
  * Synchronizes the application state based on the URL hash.
  */
@@ -13,15 +16,15 @@ export const syncHashToStore = (
   const [main, sub] = hash.split("/");
   setActiveMain(main);
   if (sub) setActiveSub(sub);
-
   const item = sidebarData.find((x) => x.href === main);
+  const headTitle = title.split("||")[0].trim();
+  document.title = `${item?.label} | ${headTitle}`;
   if (item) setOpenMenu(item.label);
 };
 
-/**
- * Updates the browser hash without a full page reload.
- */
-export const updateHash = (main: string, sub?: string) => {
+export const updateHash = (label: string, main: string, sub?: string) => {
+  const headTitle = title.split("||")[0].trim();
+  document.title = `${label} | ${headTitle}`;
   if (sub) {
     window.location.hash = `${main}/${sub}`;
   } else {

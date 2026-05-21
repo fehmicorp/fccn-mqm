@@ -8,7 +8,7 @@ export const company_details = {
 }
 export const short_name = `${company_details.preffix} UMS`;
 export const  long_name = `${company_details.name} Unified Messaging Service`;
-export const title = `${company_details.short_name} || ${long_name}`;
+export const title = `${short_name}`;
 export const description = `${short_name} is an enterprise-grade omni-channel transaction queue engine built with Next.js and Tailwind CSS. Seamlessly manage, build, and audit high-throughput outgoing Email, SMS, and WhatsApp communications from a single interface.`;
 export const favicon = asset("fav.ico");
 export const Logo_image = asset("logo/icon_192.png");

@@ -2,7 +2,7 @@ export default function SidebarSkeleton() {
   return (
     <>
       {/* Desktop */}
-      <div className="hidden lg:flex flex-col mt-12 w-72 h-screen fixed top-0 left-0 bg-slate-200 dark:bg-black p-4 space-y-3 animate-pulse">
+      <div className="hidden lg:flex flex-col mt-12 xl:w-72 w-64 h-screen fixed top-0 left-0 bg-slate-200 dark:bg-black p-4 space-y-3 animate-pulse">
         {[...Array(8)].map((_, i) => (
           <div key={i} className="h-10 rounded-md bg-slate-300 dark:bg-stone-800" />
         ))}

@@ -9,7 +9,7 @@ export const textMapper: Record<TextVariant, TextConfig> = {
   // Heading for Header
   head: {
     as: "h2",
-    className: "text-lg font-semibold text-black dark:text-stone-50",
+    className: "text-md font-normal text-black dark:text-stone-50",
   },
   // Default fallback
   def: {

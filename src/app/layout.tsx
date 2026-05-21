@@ -4,9 +4,9 @@ import { title, description, manifest, favicon, APP_Domain, Logo_image } from "@
 import "./globals.css";
 
 import HeaderLayout from "@/components/header";
-import FooterLayout from "@/components/footer";
 import SidebarComponent from "@/components/sidebar";
 import GAHeader from "@/components/header/GA";
+import FooterLayout from "@/components/footer";
 
 // Fonts
 const inter = Inter({
@@ -53,20 +53,53 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({children}: {children: React.ReactNode}) {
-  const baseHref =  process.env.NODE_ENV === "production" ? "/mailer" : "";
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" suppressHydrationWarning  className="scrollbar-hide">
+    <html lang="en" suppressHydrationWarning className="scrollbar-hide">
       <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+        {/* ⚡ MUST RUN FIRST (NO REACT SCRIPT) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(function () {
+  try {
+    const saved = localStorage.getItem("theme");
+
+    const system = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+
+    const theme = saved || system;
+
+    const root = document.documentElement;
+
+    root.classList.toggle("dark", theme === "dark");
+    root.style.colorScheme = theme;
+  } catch (e) {}
+})();
+            `,
+          }}
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
       </head>
+
       <body className={`${inter.variable} ${ibm.variable} antialiased`}>
         <GAHeader />
-        <main className="relative h-screen min-h-screen w-full flex flex-col transition-colors duration-300">
+
+        <main className="relative h-screen min-h-screen w-full flex flex-col">
           <HeaderLayout />
+
           <div className="flex">
             <SidebarComponent />
-            <div className="mt-12 w-full lg:pl-72 sm:pl-16 pl-0 animate-in fade-in duration-500">
+            <div className="mt-12 w-full xl:pl-72 lg:pl-64 sm:pl-16 pl-0 animate-in fade-in duration-500">
               {children}
               <FooterLayout />
             </div>
@@ -74,5 +107,5 @@ export default async function RootLayout({children}: {children: React.ReactNode}
         </main>
       </body>
     </html>
-  )
+  );
 }

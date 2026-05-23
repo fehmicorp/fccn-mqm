@@ -76,6 +76,7 @@ export default function ThemeSlider() {
     <button
       onClick={toggleTheme}
       className={`
+        hidden md:inline-flex
         relative flex items-center
         w-16 h-8
         rounded-full

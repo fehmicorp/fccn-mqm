@@ -16,7 +16,7 @@ export default function SidebarSkeleton() {
       </div>
 
       {/* Mobile (only when open ideally, but safe fallback) */}
-      <div className="sm:hidden fixed inset-0 z-40 flex animate-pulse">
+      <div className="hidden fixed inset-0 z-40 flex animate-pulse">
         <div className="absolute inset-0 bg-black/30" />
         <div className="w-72 h-full bg-white dark:bg-stone-950 p-4 space-y-3">
           {[...Array(8)].map((_, i) => (

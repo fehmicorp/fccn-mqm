@@ -68,37 +68,35 @@ export default function Dash() {
           <div className="flex items-center gap-3">
             <h1 className="text-3xl font-extrabold tracking-tight">System Telemetry</h1>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 animate-pulse">
-              Engine Live
+              Live
             </span>
           </div>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+          <p className="text-sm text-stone-500 dark:text-stone-400 mt-1">
             Cluster-wide data pipelines for transactional and event-driven messaging tasks.
           </p>
         </div>
-        
-        {/* Real-time system vitals strip */}
-        {/* <div className="grid grid-cols-2 sm:flex sm:items-center gap-3 sm:gap-6 bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+        <div className="grid grid-cols-2 sm:flex sm:items-start gap-3 sm:gap-6 bg-stone-100 dark:bg-stone-900 p-3 rounded-xl border border-stone-300 dark:border-stone-700">
           <div className="px-2">
-            <span className="block text-[10px] uppercase font-bold tracking-wider text-slate-400">Total In-Flight</span>
+            <span className="block text-[10px] uppercase font-bold tracking-wider text-stone-400">Total In-Flight</span>
             <span className="text-base font-bold font-mono text-indigo-600 dark:text-indigo-400">{brokerMetrics.totalInFlight}</span>
           </div>
-          <div className="px-2 border-l border-slate-200 dark:border-slate-800 hidden sm:block">
-            <span className="block text-[10px] uppercase font-bold tracking-wider text-slate-400">Global Velocity</span>
+          <div className="px-2 border-l border-stone-200 dark:border-stone-800 hidden sm:block">
+            <span className="block text-[10px] uppercase font-bold tracking-wider text-stone-400">Global Velocity</span>
             <span className="text-base font-bold font-mono">{brokerMetrics.globalThroughput}</span>
           </div>
-          <div className="px-2 border-l border-slate-200 dark:border-slate-800">
-            <span className="block text-[10px] uppercase font-bold tracking-wider text-slate-400">Avg Processing Latency</span>
+          <div className="px-2 border-l border-stone-200 dark:border-stone-800">
+            <span className="block text-[10px] uppercase font-bold tracking-wider text-stone-400">Avg Processing Latency</span>
             <span className="text-base font-bold font-mono">{brokerMetrics.avgLatency}</span>
           </div>
-          <div className="px-2 border-l border-slate-200 dark:border-slate-800 hidden sm:block">
-            <span className="block text-[10px] uppercase font-bold tracking-wider text-slate-400">Backpressure</span>
+          <div className="px-2 border-l border-stone-200 dark:border-stone-800 hidden sm:block">
+            <span className="block text-[10px] uppercase font-bold tracking-wider text-stone-400">Backpressure</span>
             <span className="text-base font-bold text-emerald-500">{brokerMetrics.backpressureStatus}</span>
           </div>
-        </div> */}
+        </div>
       </div>
 
       {/* 2. CHANNELS DETAILED ANALYTICS GRID */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6" id="analytics-channels">
         {Object.entries(analyticsChannels).map(([key, data]) => (
           <div 
             key={key}
@@ -169,10 +167,7 @@ export default function Dash() {
         ))}
       </div>
 
-      {/* 3. TIME-SERIES THROUGHPUT ANALYSIS & CAPACITY BLOCKS */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        {/* Dynamic Multi-Channel Load Distribution Chart Area */}
+      {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 rounded-xl border border-slate-200 dark:border-slate-800 p-5 bg-white dark:bg-slate-900 shadow-sm flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between">
@@ -187,7 +182,6 @@ export default function Dash() {
             </div>
           </div>
 
-          {/* Matrix Visualization Framework */}
           <div className="h-56 my-4 bg-slate-50 dark:bg-slate-950/40 rounded-xl border border-slate-100 dark:border-slate-850 flex items-end justify-between p-6 relative group">
             <div className="absolute inset-0 flex items-center justify-center bg-slate-900/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none duration-150">
               <span className="text-xs font-mono bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-md px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
@@ -195,7 +189,6 @@ export default function Dash() {
               </span>
             </div>
 
-            {/* Dynamic Simulated Cluster Bars */}
             {historicalTimeline.map((snap, i) => (
               <div key={i} className="flex-1 flex flex-col items-center gap-1.5 h-full justify-end px-2 sm:px-4">
                 <div className="w-full flex items-end justify-center gap-1 h-3/4">
@@ -224,7 +217,6 @@ export default function Dash() {
           </div>
         </div>
 
-        {/* Distributed Consumer Bottleneck Analyst */}
         <div className="rounded-xl border border-slate-200 dark:border-slate-800 p-5 bg-white dark:bg-slate-900 shadow-sm space-y-4 flex flex-col justify-between">
           <div>
             <h2 className="text-lg font-bold">Node Diagnostics</h2>
@@ -257,17 +249,15 @@ export default function Dash() {
             Scale Out Worker Subscriptions (+8 Nodes)
           </button>
         </div>
-      </div>
+      </div> */}
 
-      {/* 4. GRANULAR MESSAGE EVENT STREAM MONITOR */}
-      <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
+      {/* <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
         <div className="p-5 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h2 className="text-lg font-bold">Active Partition Workers</h2>
             <p className="text-xs text-slate-400">Real-time breakdown of internal thread executions by state.</p>
           </div>
           
-          {/* Functional Filters */}
           <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-1 rounded-lg text-xs font-medium">
             {(['all', 'sending', 'receiving'] as const).map((tab) => (
               <button
@@ -324,7 +314,7 @@ export default function Dash() {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
 
     </section>
   );
